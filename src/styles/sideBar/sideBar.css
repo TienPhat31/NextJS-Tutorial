@@ -1,0 +1,11 @@
+
+
+.nav-link {
+	transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động mượt mà */
+}
+
+.nav-link:hover {
+	background-color: #16a085; /* Thay đổi màu nền khi hover */
+	color: white; /* Đổi màu chữ khi hover */
+	padding-left: 10px; /* Thêm khoảng cách khi hover */
+}
