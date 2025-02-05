@@ -1,5 +1,5 @@
 import { Nav } from "react-bootstrap";
-import { FaSignOutAlt, FaServer, FaUserCog } from "react-icons/fa";
+import { FaServer, FaUserCog } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import { GrTemplate } from "react-icons/gr";

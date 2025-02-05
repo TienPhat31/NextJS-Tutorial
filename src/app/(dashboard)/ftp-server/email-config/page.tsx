@@ -40,7 +40,7 @@ const Email_Config = () => {
 
 		const fetchData = async () => {
 			try {
-				const response = await axios.get("http://localhost:3001/ftp-server/email_config", {
+				const response = await axios.get("http://localhost/api/ftp-server/email_config", {
 					headers: {
 						Authorization: `Bearer ${accessToken}`,
 					},
@@ -95,7 +95,7 @@ const Email_Config = () => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ftp-server/checkSMTP",
+					"http://localhost/api/ftp-server/checkSMTP",
 					checkSmtpDTO,
 					{
 						withCredentials: true,
@@ -152,7 +152,7 @@ const Email_Config = () => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ftp-server/emailConfig",
+					"http://localhost/api/ftp-server/emailConfig",
 					emailConfigDTO,
 					{
 						withCredentials: true,

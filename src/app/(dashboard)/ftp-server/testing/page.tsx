@@ -51,7 +51,7 @@ const Testing = () => {
 
 		const fetchData = async () => {
 			try {
-				const response = await axios.get("http://localhost:3001/ftp-server/testing", {
+				const response = await axios.get("http://localhost/api/ftp-server/testing", {
 					headers: {
 						Authorization: `Bearer ${accessToken}`,
 					},
@@ -84,7 +84,7 @@ const Testing = () => {
 					toast.error("Bạn không có quyền truy cập");
 				} else {
 					console.error(err);
-					toast.error("Đã có lỗi xảy ra, vui lòng thử lại!111");
+					toast.error("Server đang bị lỗi. Vui lòng bạn quay lại website sau!");
 				}
 			}
 		};
@@ -126,7 +126,7 @@ const Testing = () => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ftp-server/testing",
+					"http://localhost/api/ftp-server/testing",
 					ftpServerDTO,
 					{
 						withCredentials: true,
@@ -191,7 +191,7 @@ const Testing = () => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ftp-server/configData",
+					"http://localhost/api/ftp-server/configData",
 					configUserDataDTO,
 					{
 						withCredentials: true,
@@ -270,12 +270,16 @@ const Testing = () => {
 			formData.append("port", String(port));
 
 			try {
-				const response = await axios.post("http://localhost:3001/ftp-server/upload", formData, {
-					withCredentials: true,
-					headers: {
-						Authorization: `Bearer ${accessToken}`,
-					},
-				});
+				const response = await axios.post(
+					"http://localhost/api/ftp-server/upload",
+					formData,
+					{
+						withCredentials: true,
+						headers: {
+							Authorization: `Bearer ${accessToken}`,
+						},
+					}
+				);
 
 				if (response.data?.statusCode == 200 && response.data?.data === true) {
 					toast.success("Upload file lên FTP server thành công!");
@@ -335,12 +339,16 @@ const Testing = () => {
 			formData.append("port", String(port));
 
 			try {
-				const response = await axios.post("http://localhost:3001/ftp-server/delete", formData, {
-					withCredentials: true,
-					headers: {
-						Authorization: `Bearer ${accessToken}`,
-					},
-				});
+				const response = await axios.post(
+					"http://localhost/api/ftp-server/delete",
+					formData,
+					{
+						withCredentials: true,
+						headers: {
+							Authorization: `Bearer ${accessToken}`,
+						},
+					}
+				);
 
 				if (response.data?.statusCode == 200 && response.data?.data === true) {
 					toast.success("Delete file trên FTP server thành công!");
@@ -395,7 +403,7 @@ const Testing = () => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ftp-server/download",
+					"http://localhost/api/ftp-server/download",
 					formData,
 					{
 						withCredentials: true,

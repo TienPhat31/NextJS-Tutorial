@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+   nextjs-tutorial:
+      build:
+         context: ./
+         dockerfile: Dockerfile
+      container_name: next-app
+      ports:
+         - "3000:3000"
+      volumes:
+         - .:/app # Đồng bộ mã nguồn local với container
+         - /app/node_modules # Bỏ qua node_modules bên trong container
+      working_dir: /app/src # Đặt thư mục làm việc là src
+
+   nginx:
+      image: nginx:latest
+      ports:
+         - "80:80"
+      volumes:
+         - ./nginx.conf:/etc/nginx/nginx.conf
+      depends_on:
+         - nextjs-tutorial

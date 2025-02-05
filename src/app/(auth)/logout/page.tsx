@@ -31,22 +31,6 @@ const Logout = () => {
 			});
 	}, [router]);
 
-	// // Lấy token
-	// useEffect(() => {
-	// 	// Lấy instance Keycloak khi component mount
-	// 	const keycloak = getKeycloakInstance();
-	// 	setKeycloakInstance(keycloak);
-	// }, []);
-
-	// const handleLogOut = () => {
-	// 	if (accessToken) {
-	// 		sessionStorage.removeItem("accessToken");
-	// 		router.push("/login");
-	// 	} else {
-	// 		router.push("/login");
-	// 	}
-	// };
-
 	const handleLogout = async () => {
 		if (keycloak) {
 			try {

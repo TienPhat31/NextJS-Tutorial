@@ -1,7 +1,7 @@
 "use client";
 import AppTable from "@/components/app.table";
 import useSWR from "swr";
-import { useEffect } from "react";
+
 
 export default function Home() {
 	const fetcher = (url: string) => fetch(url).then((res) => res.json());

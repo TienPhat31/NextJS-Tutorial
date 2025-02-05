@@ -52,7 +52,7 @@ const ShipDetails = ({ params }: { params: Promise<{ shipCode: string }> }) => {
 
 		const fetchData = async () => {
 			try {
-				const response = await axios.get(`http://localhost:3001/ships/details/${shipCode}`, {
+				const response = await axios.get(`http://localhost:8000/ships/details/${shipCode}`, {
 					headers: {
 						Authorization: `Bearer ${accessToken}`,
 					}
@@ -120,7 +120,7 @@ const ShipDetails = ({ params }: { params: Promise<{ shipCode: string }> }) => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ftp-server/testing",
+					"http://localhost:8000/ftp-server/testing",
 					ftpServerDTO,
 					{
 						withCredentials: true,
@@ -179,7 +179,7 @@ const ShipDetails = ({ params }: { params: Promise<{ shipCode: string }> }) => {
 
 			try {
 				const response = await axios.post(
-					`http://localhost:3001/ships/saveConfigShipData/${shipCode}`,
+					`http://localhost/api/ships/saveConfigShipData/${shipCode}`,
 					configShipData,
 					{
 						withCredentials: true,

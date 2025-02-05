@@ -59,7 +59,7 @@ const AddNewShipModal = ({
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/ships/addNewShip",
+					"http://localhost:8000/ships/addNewShip",
 					ftpServerDTO,
 					{
 						withCredentials: true,

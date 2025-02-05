@@ -41,9 +41,9 @@ const Templates = () => {
 	const fetchData = async () => {
 		if (!accessToken) return;
 		try {
-			const response = await axios.get("http://localhost:3001/ships", {
+			const response = await axios.get("http://localhost:8000/ships", {
 				headers: {
-					Authorization: `Bearer ${accessToken}`,
+					Authorization: `Bearer ${accessToken}`,	
 				},
 			});
 
@@ -95,7 +95,7 @@ const Templates = () => {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:3001/templates/save-template", // Endpoint API
+					"http://localhost/api/templates/save-template", // Endpoint API
 					formData,
 					{
 						headers: {

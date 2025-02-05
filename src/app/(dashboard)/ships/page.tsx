@@ -33,7 +33,7 @@ const Ships = () => {
 	const fetchData = async () => {
 		if (!accessToken) return;
 		try {
-			const response = await axios.get("http://localhost:3001/ships", {
+			const response = await axios.get("http://localhost/api/ships", {
 				headers: {
 					Authorization: `Bearer ${accessToken}`,
 				},

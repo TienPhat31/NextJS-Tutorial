@@ -1,12 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import getKeycloakInstance from "@/lib/keycloak";
 
 const Login = () => {
-	const [username, setUserName] = useState<string>("");
-	const [password, setPassword] = useState<string>("");
 
 	// ROUTER
 	const router = useRouter();
@@ -66,67 +64,6 @@ const Login = () => {
 		}
 	}, [router]);
 
-	// return (
-	// 	<Container
-	// 		className="my-5"
-	// 		style={{
-	// 			height: "700px",
-	// 			width: "1200px",
-	// 			boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-	// 		}}
-	// 	>
-	// 		<Row className="align-items-center h-100">
-	// 			<Col sm={7} style={{ paddingLeft: "50px", paddingRight: "50px" }}>
-	// 				<h1 className="text-center mb-4">Login</h1>
-	// 				<Form onSubmit={handleLoginButton}>
-	// 					{/* Email */}
-	// 					<Form.Group className="mb-3" controlId="formEmail">
-	// 						<Form.Label>User name</Form.Label>
-	// 						<Form.Control
-	// 							type="text"
-	// 							placeholder="User name"
-	// 							required
-	// 							value={username}
-	// 							onChange={(e) => setUserName(e.target.value)}
-	// 						/>
-	// 					</Form.Group>
-
-	// 					{/* Password */}
-	// 					<Form.Group className="mb-3" controlId="formPassword">
-	// 						<Form.Label>Password</Form.Label>
-	// 						<Form.Control
-	// 							type="password"
-	// 							placeholder="Enter your password"
-	// 							required
-	// 							value={password}
-	// 							onChange={(e) => setPassword(e.target.value)}
-	// 						/>
-	// 					</Form.Group>
-
-	// 					{/* Remember Me */}
-	// 					<Form.Group className="mb-3" controlId="formRememberMe">
-	// 						<Form.Check type="checkbox" label="Remember me" />
-	// 					</Form.Group>
-
-	// 					{/* Submit Button */}
-	// 					<Button variant="success" type="submit" className="w-100">
-	// 						Login
-	// 					</Button>
-	// 				</Form>
-	// 			</Col>
-
-	// 			<Col sm={5} className="h-100 p-0">
-	// 				<Image
-	// 					src="/background.png"
-	// 					alt="Background"
-	// 					className="w-100 h-100"
-	// 					style={{ objectFit: "cover" }}
-	// 					fluid
-	// 				/>
-	// 			</Col>
-	// 		</Row>
-	// 	</Container>
-	// );
 
 	return <div>{/* Có thể thêm nội dung ở đây nếu cần */}</div>;
 };
